@@ -54,10 +54,10 @@ Dos sprints medidos, y el dato que me sorprendió: el aumento fue parejo entre p
 
 ## Cómo está organizado
 
-Cada artículo vive en su carpeta, con el texto en Markdown, la versión con
-formato para publicar y el post que lo acompaña. El índice de arriba **no se
-escribe a mano**: se genera desde los metadatos de cada artículo con
-`scripts/build-index.py`, así no puede quedar desactualizado.
+Cada artículo vive en su carpeta, con el texto en Markdown y el post que lo
+acompaña. El índice de arriba **no se escribe a mano**: se genera desde los
+metadatos de cada artículo con `scripts/build-index.py`, así no puede quedar
+desactualizado.
 
 ```
 dev-genius/

@@ -32,9 +32,11 @@ El sistema envejecía mientras el producto avanzaba. Cada semana sabía un poco 
 
 Lo dejé.
 
-## Un mes sin escribir código
+## Un mes sin construir automatización
 
-Me tomé un mes de reinicio: leer, reenfocar y no tocar el teclado. Fue el período en que Anthropic publicaba prácticamente todas las semanas, y me dediqué a entender qué estaba cambiando de verdad debajo del ruido.
+Me tomé un mes de reinicio. No dejé de trabajar: seguí sacando mis tickets como siempre, con Cursor y Claude Code, las herramientas de todos los días. Lo que frené fue construir — no escribí una línea más de automatización en ese mes.
+
+Lo usé para leer y reenfocar. Fue el período en que Anthropic publicaba prácticamente todas las semanas, y me dediqué a entender qué estaba cambiando de verdad debajo del ruido.
 
 La pregunta con la que volví era otra. No *cómo hago un agente más listo*, sino **cómo dejo de perder el conocimiento**.
 

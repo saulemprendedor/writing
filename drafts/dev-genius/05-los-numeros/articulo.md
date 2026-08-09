@@ -4,7 +4,7 @@ slug: los-numeros
 series: dev-genius
 episode: 5
 date: 2026-08-09
-status: published
+status: draft
 lang: es
 summary: "Dos sprints medidos, y el dato que me sorprendió: el aumento fue parejo entre perfiles de distinto seniority."
 banner: banner.png

@@ -4,7 +4,7 @@ slug: el-cuello-de-botella
 series: dev-genius
 episode: 4
 date: 2026-08-09
-status: published
+status: draft
 lang: es
 summary: "Automatizar una etapa no acelera el sistema: mueve la restricción. Y por qué nadie del equipo tuvo que aprender una herramienta nueva."
 banner: banner.png

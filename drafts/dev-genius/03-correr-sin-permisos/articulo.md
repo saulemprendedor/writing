@@ -4,7 +4,7 @@ slug: correr-sin-permisos
 series: dev-genius
 episode: 3
 date: 2026-08-09
-status: published
+status: draft
 lang: es
 summary: "Las cinco mitigaciones que convierten una idea imprudente en una decisión defendible. Ninguna es sobre el modelo."
 banner: banner.png

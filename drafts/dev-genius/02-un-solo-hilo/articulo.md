@@ -4,7 +4,7 @@ slug: un-solo-hilo
 series: dev-genius
 episode: 2
 date: 2026-08-09
-status: published
+status: draft
 lang: es
 summary: "La idea que sacó el experimento de mi laptop, y la decisión de arquitectura que la sostiene: orquestar el proceso y delegar el ciclo."
 banner: banner.png

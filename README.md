@@ -34,22 +34,6 @@ Si te dedicás a esto, probablemente estés en alguna parte del mismo camino.
 Un piloto con orquestadores de agentes que ayudaba y se depreciaba solo. Por qué el conocimiento congelado era el problema real, y qué hice después de abandonarlo.  
 2026-08-09
 
-**2. [Por qué una feature debería vivir en un solo hilo](dev-genius/02-un-solo-hilo/articulo.md)**  
-La idea que sacó el experimento de mi laptop, y la decisión de arquitectura que la sostiene: orquestar el proceso y delegar el ciclo.  
-2026-08-09
-
-**3. [Un agente que corre sin pedir permisos: cómo se hace eso seguro](dev-genius/03-correr-sin-permisos/articulo.md)**  
-Las cinco mitigaciones que convierten una idea imprudente en una decisión defendible. Ninguna es sobre el modelo.  
-2026-08-09
-
-**4. [El cuello de botella se corrió dos veces](dev-genius/04-el-cuello-de-botella/articulo.md)**  
-Automatizar una etapa no acelera el sistema: mueve la restricción. Y por qué nadie del equipo tuvo que aprender una herramienta nueva.  
-2026-08-09
-
-**5. [Los números, y el hallazgo que no esperaba](dev-genius/05-los-numeros/articulo.md)**  
-Dos sprints medidos, y el dato que me sorprendió: el aumento fue parejo entre perfiles de distinto seniority.  
-2026-08-09
-
 <!-- ARTICLES:END -->
 
 ## Cómo está organizado

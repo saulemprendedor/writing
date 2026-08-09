@@ -47,9 +47,13 @@ desactualizado.
 dev-genius/
 └── 01-el-primer-intento-fracaso/
     ├── articulo.md      el texto y sus metadatos
-    └── post.md          el post que lo acompaña
-drafts/                  lo que todavía no publiqué
+    ├── post.md          el post que lo acompaña
+    ├── banner.html      la portada, dibujada en SVG
+    └── banner.png       exportada a 1920×1080
 ```
+
+Lo que todavía no publiqué vive en la rama `drafts`, no en `main`. Acá solo
+está lo que ya salió.
 
 ## Contacto
 

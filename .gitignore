@@ -1,1 +1,4 @@
 .DS_Store
+
+# reglas locales de trabajo, no versionadas
+CLAUDE.md

@@ -63,3 +63,5 @@ Sacarlo de ahí fue el problema siguiente. Y resultó ser un problema de diseño
 ---
 
 *Primer artículo de una serie de cinco sobre cómo construí un sistema de agentes que entrega software en producción.*
+
+*Sigue en el capítulo 2: [Por qué una feature debería vivir en un solo hilo](https://saul.botsmith.ai/es/blog/un-solo-hilo).*

@@ -12,7 +12,7 @@ banner: banner.jpg
 
 # Por qué una feature debería vivir en un solo hilo
 
-En el artículo anterior conté cómo, después de un piloto fallido, encontré una forma de que el conocimiento del sistema dejara de envejecer. Funcionaba — y vivía en mi laptop.
+En [el artículo anterior](https://saul.botsmith.ai/es/blog/el-primer-intento-fracaso) conté cómo, después de un piloto fallido, encontré una forma de que el conocimiento del sistema dejara de envejecer. Funcionaba — y vivía en mi laptop.
 
 La segunda pieza vino de una presentación de Salesforce sobre funcionalidades de IA dentro de Slack. Ahí me explotó la idea: **si el equipo entero ya vive en Slack, ¿por qué las herramientas del trabajo no están ahí?**
 

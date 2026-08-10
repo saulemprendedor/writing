@@ -7,7 +7,7 @@ date: 2026-08-09
 status: published
 lang: es
 summary: "Un piloto con orquestadores de agentes que ayudaba y se depreciaba solo. Por qué el conocimiento congelado era el problema real, y qué hice después de abandonarlo."
-banner: banner.png
+banner: banner.jpg
 ---
 
 # Mi primer intento con agentes de IA fracasó. El problema no era el modelo

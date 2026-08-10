@@ -34,6 +34,10 @@ Si te dedicás a esto, probablemente estés en alguna parte del mismo camino.
 Un piloto con orquestadores de agentes que ayudaba y se depreciaba solo. Por qué el conocimiento congelado era el problema real, y qué hice después de abandonarlo.  
 2026-08-09
 
+**2. [Por qué una feature debería vivir en un solo hilo](dev-genius/02-un-solo-hilo/articulo.md)**  
+La idea que sacó el experimento de mi laptop, y la decisión de arquitectura que la sostiene: orquestar el proceso y delegar el ciclo.  
+2026-08-10
+
 <!-- ARTICLES:END -->
 
 ## Cómo está organizado

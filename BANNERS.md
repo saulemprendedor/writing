@@ -4,40 +4,66 @@ Cada artículo lleva una imagen de portada. La coherencia entre las cinco import
 más que lo lindo de cada una: si se ven como una familia, la serie parece una
 serie. Si cada una tiene su estilo, parecen cinco artículos sueltos.
 
+> **Esta especificación se reescribió desde el banner del capítulo 1**, que es
+> el único de la nueva dirección que existe. Describe lo que esa portada es, no
+> lo que se planeó antes. El prompt base de abajo está reconstruido a partir de
+> la imagen: si el prompt real que la generó dice otra cosa, gana el real y este
+> archivo se corrige.
+
 ---
+
+## La dirección, en una línea
+
+Render cinematográfico oscuro con el título compuesto encima. No es el diagrama
+plano y abstracto de la versión anterior: acá hay profundidad, materia y una
+escena. El texto va **dentro** de la imagen, no aparte.
 
 ## Formato común
 
 | Parámetro | Valor |
 |---|---|
-| Medidas | **1920 × 1080 px** (16:9) — baja bien a los tamaños de LinkedIn |
-| Fondo | Casi negro, `#0d1117` |
-| Acento | Turquesa `#2dd4bf` — el mismo de `saul.botsmith.ai` y `devgenius.botsmith.ai` |
-| Acentos secundarios | Verde `#3fb950`, ámbar `#d29922`, violeta `#a371f7` — con moderación |
-| Estilo | Abstracto, técnico, sin personas, sin robots, sin cerebros de circuitos |
-| Franja inferior | **20% de alto, vacía** — ahí va el pie de marca |
+| Medidas | Ancho apaisado, entre 3:2 y 16:9. El capítulo 1 es 1712 × 1152 |
+| Ancho mínimo | **1200 px** — abajo de eso LinkedIn y Open Graph recomprimen feo |
+| Fondo | Casi negro con tinte azul profundo |
+| Acento principal | Azul cian brillante — el grafo, los nodos, las líneas de luz |
+| Acento de tensión | Rojo, solo donde el concepto lo pide (alertas, roturas, fallas) |
+| Estilo | Render 3D cinematográfico, profundidad de campo, glow volumétrico |
+| Figuras | Permitidas: siluetas robóticas o humanoides, apenas insinuadas al fondo |
+| Texto | **Compuesto dentro de la imagen** (ver abajo) |
 
-## El pie de marca va compuesto aparte
+El sitio **mide la imagen y respeta su proporción**, así que el tamaño exacto no
+es crítico — no hay recorte que se coma nada. Lo que sí importa es que el pie no
+quede pegado al borde.
 
-**No le pidas el texto al generador de imágenes.** Ningún modelo va a producir
-exactamente el mismo pie cinco veces: cambia el interletrado, se come una tilde,
-mueve el email dos píxeles. Y el pie es justamente lo que tiene que ser idéntico.
+## La composición
 
-El flujo correcto: **generás la imagen con la franja inferior vacía**, y después
-componés el texto encima — en Figma, Canva o con la plantilla que quieras. Cinco
-veces el mismo bloque, sin variación.
-
-El pie, siempre igual:
+Tres zonas, siempre en el mismo lugar:
 
 ```
-SAÚL HERNÁNDEZ  ·  TECH LEAD — IA APLICADA AL DESARROLLO
-saul@botsmith.ai                                     DEV GENIUS  ·  1/5
+┌─────────────────────────────────────────────────────────┐
+│  Título del artículo                                    │
+│  en dos o tres líneas                    [ el motivo ]  │
+│                                                         │
+│  SAÚL HERNÁNDEZ                                         │
+│  TECH LEAD — IA APLICADA AL DESARROLLO                  │
+│                                                         │
+│                                                         │
+│  │ saul@botsmith.ai                     DEV GENIUS      │
+│                                          ─────────      │
+│                                              1 / 5      │
+└─────────────────────────────────────────────────────────┘
 ```
 
-- Izquierda: nombre y rol, en mayúsculas, con el interletrado abierto
-- Debajo: el email, en un gris tenue
-- Derecha: la serie y el número de episodio, en turquesa
-- Sobre la franja, una línea de 1px en turquesa al 25% separándola de la imagen
+- **Izquierda arriba:** el título, en blanco, condensada pesada, dos o tres
+  líneas. Es lo primero que se lee en el feed.
+- **Debajo:** el nombre en mayúsculas grandes, y el rol en gris con el
+  interletrado abierto.
+- **Derecha:** el motivo visual del capítulo, con aire alrededor.
+- **Abajo izquierda:** una línea vertical fina y el email, en gris tenue.
+- **Abajo derecha:** `DEV GENIUS`, una regla horizontal, y `N / 5`.
+
+El pie y el bloque de nombre son **idénticos en las cinco**. El título y el
+motivo son lo único que cambia.
 
 ---
 
@@ -46,14 +72,23 @@ saul@botsmith.ai                                     DEV GENIUS  ·  1/5
 Este bloque va en **todos** los prompts. Es lo que mantiene la familia unida:
 
 ```
-Wide 16:9 technical illustration, 1920x1080. Abstract, editorial, engineering
-diagram aesthetic. Near-black background (#0d1117) with a single teal accent
-color (#2dd4bf). Thin precise lines, generous negative space, subtle film grain,
-soft volumetric glow around the accent elements. No text, no letters, no numbers,
-no logos anywhere in the image. No people, no robots, no humanoid figures, no
-brain imagery, no circuit-board clichés. Leave the bottom 20% of the frame empty
-and uncluttered — a calm dark band with nothing in it. Cinematic, restrained,
-confident. Feels like a systems diagram drawn by someone with taste.
+Wide cinematic 3D render, dark editorial tech illustration. Near-black
+background with a deep blue tint. Bright cyan-blue as the light source: glowing
+wireframe geometry, luminous nodes, thin light-traced connections. Volumetric
+glow, shallow depth of field, fine grain. Faint robotic or humanoid silhouettes
+far back in the darkness, barely readable, never the subject. Floating dark
+panels and fragments catching the light. Leave the entire left half calm and
+uncluttered — the title is composed there — and keep the bottom edge quiet.
+Restrained, expensive, a little ominous. No text, no letters, no numbers, no
+logos anywhere in the image.
+```
+
+Cuando el concepto lo pida, se le suma la tensión en rojo:
+
+```
+Red warning glyphs glowing on some of the fragments, and hairline red fracture
+lines where the structure has broken. Red is the only warm color in the frame
+and stays a minority against the blue.
 ```
 
 ---
@@ -63,14 +98,13 @@ confident. Feels like a systems diagram drawn by someone with taste.
 **Concepto:** conocimiento congelado. Un grafo que fue vivo y quedó detenido.
 
 ```
-[PROMPT BASE]
+[PROMPT BASE] + [TENSIÓN EN ROJO]
 
-Subject: a network of connected nodes forming an agent graph, but frozen —
-encased in translucent ice or crystal, with hairline fractures spreading across
-the structure. A few connection lines have gone dark and broken, drifting apart
-as fragments. The teal glow inside the crystal is dimming, as if the system is
-cooling down. The impression is of something that worked once and stopped
-keeping up.
+Subject: a bright cyan wireframe polyhedron of connected nodes floating at the
+center-right, intact and glowing, surrounded by dark cracked panels drifting
+apart. Chains hang broken from some of the fragments. Screens at the edges show
+dense unreadable code, a few lines in red. The structure still holds, but
+everything around it has failed.
 ```
 
 ## 2 · Por qué una feature debería vivir en un solo hilo
@@ -82,7 +116,7 @@ keeping up.
 
 Subject: five separate scattered streams of small nodes entering from the left
 edge, each in a different muted color, converging and braiding into a single
-bright continuous teal line that runs cleanly to the right edge. Along that
+bright continuous cyan line that runs cleanly to the right edge. Along that
 single line, five evenly spaced luminous waypoints mark stages. The left side
 feels tangled and noisy; the right side feels resolved and inevitable.
 ```
@@ -95,7 +129,7 @@ feels tangled and noisy; the right side feels resolved and inevitable.
 [PROMPT BASE]
 
 Subject: a single luminous cube floating in dark empty space, its edges drawn in
-thin teal light, its interior filled with dense chaotic activity — sparks, rapid
+thin cyan light, its interior filled with dense chaotic activity — sparks, rapid
 motion, energy contained. The cube is sealed: no line, particle or glow escapes
 its faces. Around it, absolute stillness and darkness. The contrast between the
 turbulence inside and the calm outside is the whole point.
@@ -111,7 +145,7 @@ turbulence inside and the calm outside is the whole point.
 Subject: a horizontal pipeline of flowing particles moving left to right, with
 two distinct narrow constriction points along its length. At the first
 constriction the flow has already been widened and now passes freely, glowing
-teal. At the second, particles are piling up in a dense bright cluster, waiting.
+cyan. At the second, particles are piling up in a dense bright cluster, waiting.
 A faint ghost outline shows where the first bottleneck used to be. The sense is
 of a problem that relocated rather than disappeared.
 ```
@@ -124,22 +158,24 @@ of a problem that relocated rather than disappeared.
 [PROMPT BASE]
 
 Subject: two ascending line graphs on a dark grid, starting at clearly different
-heights but rising with exactly the same slope, perfectly parallel. The lower
-line is teal, the upper one a soft green. Thin measurement ticks along the
-vertical axis, no labels. Subtle glow where the lines climb. The composition
-should make the parallelism unmistakable — that is the finding.
+heights but rising with exactly the same slope, perfectly parallel. Thin
+measurement ticks along the vertical axis, no labels. Subtle glow where the
+lines climb. The composition should make the parallelism unmistakable — that is
+the finding.
 ```
 
 ---
 
 ## Cómo usarlos
 
-1. Generá la imagen con el prompt correspondiente (prompt base + subject).
-2. Verificá que **no haya texto** en la imagen. Si el modelo metió letras,
-   regenerá — no las tapes.
-3. Verificá que la franja inferior quedó despejada.
-4. Componé el pie de marca encima, idéntico en las cinco.
-5. Guardala como `banner.png` en la carpeta del artículo.
+1. Generá la imagen con el prompt correspondiente (prompt base + subject),
+   dejando la mitad izquierda despejada.
+2. Verificá que **no haya texto** en la imagen generada. Si el modelo metió
+   letras, regenerá — no las tapes.
+3. Componé encima el título, el bloque de nombre y el pie. El pie y el nombre
+   se copian tal cual del capítulo anterior: es lo que no puede variar.
+4. Guardala en la carpeta del artículo y nombrala en el frontmatter (`banner:`).
+   El sitio sirve el archivo que ahí diga, con el formato que tenga.
 
 **Si alguna imagen sale muy cargada**, pedile *"more negative space, fewer
 elements, calmer composition"*. El error más común de estos modelos es llenar el

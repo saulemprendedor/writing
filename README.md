@@ -38,6 +38,10 @@ Un piloto con orquestadores de agentes que ayudaba y se depreciaba solo. Por qu�
 La idea que sacó el experimento de mi laptop, y la decisión de arquitectura que la sostiene: orquestar el proceso y delegar el ciclo.  
 [Leerlo en LinkedIn](https://www.linkedin.com/pulse/por-qu%C3%A9-una-feature-deber%C3%ADa-vivir-en-un-solo-hilo-saul-hernandez-aq8cc/) · 2026-08-10
 
+**3. [Un agente que corre sin pedir permisos: cómo se hace eso seguro](dev-genius/03-correr-sin-permisos/articulo.md)**  
+Las cinco mitigaciones que convierten una idea imprudente en una decisión defendible. Ninguna es sobre el modelo.  
+[Leerlo en LinkedIn](https://www.linkedin.com/pulse/un-agente-que-corre-sin-pedir-permisos-c%C3%B3mo-se-hace-eso-hernandez-0fnqf/) · 2026-08-11
+
 <!-- ARTICLES:END -->
 
 ## Cómo está organizado

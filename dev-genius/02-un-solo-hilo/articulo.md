@@ -52,3 +52,5 @@ Queda una pregunta incómoda, que es la del próximo artículo: ese agente corre
 ---
 
 *Segundo artículo de una serie de cinco.*
+
+*Sigue en el capítulo 3: [Un agente que corre sin pedir permisos: cómo se hace eso seguro](https://saul.botsmith.ai/es/blog/correr-sin-permisos).*

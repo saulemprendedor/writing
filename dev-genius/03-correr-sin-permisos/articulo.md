@@ -13,7 +13,7 @@ linkedin_url: https://www.linkedin.com/pulse/un-agente-que-corre-sin-pedir-permi
 
 # Un agente que corre sin pedir permisos: cómo se hace eso seguro
 
-En el artículo anterior conté que el agente que escribe el código corre en modo headless dentro de un sandbox, dueño total de sus reintentos. Falta el detalle que suele hacer levantar una ceja: **corre sin pedir permisos.**
+En [el artículo anterior](https://saul.botsmith.ai/es/blog/un-solo-hilo) conté que el agente que escribe el código corre en modo headless dentro de un sandbox, dueño total de sus reintentos. Falta el detalle que suele hacer levantar una ceja: **corre sin pedir permisos.**
 
 No pregunta antes de editar un archivo, ni antes de correr un comando. Y tiene que ser así: un permiso apretado en modo headless no protege nada, solo deja al agente clavado esperando una respuesta que nadie va a dar.
 

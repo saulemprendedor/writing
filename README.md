@@ -32,11 +32,11 @@ Si te dedicás a esto, probablemente estés en alguna parte del mismo camino.
 
 **1. [Mi primer intento con agentes de IA fracasó. El problema no era el modelo](dev-genius/01-el-primer-intento-fracaso/articulo.md)**  
 Un piloto con orquestadores de agentes que ayudaba y se depreciaba solo. Por qué el conocimiento congelado era el problema real, y qué hice después de abandonarlo.  
-2026-08-09
+[Leerlo en LinkedIn](https://www.linkedin.com/pulse/mi-primer-intento-con-agentes-de-ia-fracas%C3%B3-el-era-modelo-hernandez-ikpqf/) · 2026-08-09
 
 **2. [Por qué una feature debería vivir en un solo hilo](dev-genius/02-un-solo-hilo/articulo.md)**  
 La idea que sacó el experimento de mi laptop, y la decisión de arquitectura que la sostiene: orquestar el proceso y delegar el ciclo.  
-2026-08-10
+[Leerlo en LinkedIn](https://www.linkedin.com/pulse/por-qu%C3%A9-una-feature-deber%C3%ADa-vivir-en-un-solo-hilo-saul-hernandez-aq8cc/) · 2026-08-10
 
 <!-- ARTICLES:END -->
 

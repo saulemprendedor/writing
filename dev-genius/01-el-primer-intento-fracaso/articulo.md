@@ -8,6 +8,7 @@ status: published
 lang: es
 summary: "Un piloto con orquestadores de agentes que ayudaba y se depreciaba solo. Por qué el conocimiento congelado era el problema real, y qué hice después de abandonarlo."
 banner: banner.jpg
+linkedin_url: https://www.linkedin.com/pulse/mi-primer-intento-con-agentes-de-ia-fracas%C3%B3-el-era-modelo-hernandez-ikpqf/
 ---
 
 # Mi primer intento con agentes de IA fracasó. El problema no era el modelo

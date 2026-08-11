@@ -8,6 +8,7 @@ status: published
 lang: es
 summary: "La idea que sacó el experimento de mi laptop, y la decisión de arquitectura que la sostiene: orquestar el proceso y delegar el ciclo."
 banner: banner.jpg
+linkedin_url: https://www.linkedin.com/pulse/por-qu%C3%A9-una-feature-deber%C3%ADa-vivir-en-un-solo-hilo-saul-hernandez-aq8cc/
 ---
 
 # Por qué una feature debería vivir en un solo hilo

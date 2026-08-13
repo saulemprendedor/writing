@@ -2,16 +2,18 @@
 """Regenerate the article index in README.md from the articles themselves.
 
 The index is never edited by hand. It is rebuilt from the YAML frontmatter of
-every `articulo.es.md` under a series directory, and written between the
-ARTICLES:START / ARTICLES:END markers in README.md.
+the `articulo.<lang>.md` files under a series directory, and written between
+the ARTICLES:START / ARTICLES:END markers in README.md.
 
-Spanish is the source language, so it is what the index lists. A translation
-(`articulo.<lang>.md` beside it) is linked from its entry once it is
-published — one line per article, not one per language.
+The README is bilingual, so there is one block per language of the README —
+English and Spanish — each written between its own pair of markers and built
+from the articles in that language. An article with no translation yet falls
+back to its Spanish metadata, marked so the reader knows before clicking.
 
-Why: an index maintained by hand is wrong by the sixth article. Here the
-articles are the source of truth and the README is a derived artifact — so it
-cannot drift, and `--check` makes that a build failure instead of a surprise.
+Why: an index maintained by hand is wrong by the sixth article, and one
+maintained by hand in two languages is wrong by the second. Here the articles
+are the source of truth and the README is a derived artifact — so it cannot
+drift, and `--check` makes that a build failure instead of a surprise.
 
     python3 scripts/build-index.py            regenerate README.md
     python3 scripts/build-index.py --check    exit 1 if README.md is stale
@@ -24,25 +26,44 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 README = ROOT / "README.md"
-START = "<!-- ARTICLES:START -->"
-END = "<!-- ARTICLES:END -->"
-
-# Series get a heading of their own, in publication order.
-SERIES_TITLES = {
-    "dev-genius": "DEV Genius — cómo construí un sistema de agentes que entrega software",
-}
 
 # Only these reach the public index. A draft in the repo is work in progress,
 # not something a visitor should stumble into.
 PUBLIC_STATUSES = {"published"}
 
-# The source language: the file the index is built from, and the one every
-# article has. Anything else beside it is a translation.
+# The language every article is written in first, and the one an untranslated
+# entry falls back to.
 SOURCE_LANG = "es"
 
-# Display names for the translation links, so the label reads in the language
-# it leads to rather than in Spanish.
-LANG_NAMES = {"en": "English", "pt": "Português"}
+# Display names for the translation links, so each label reads in the
+# language it leads to.
+LANG_NAMES = {"es": "Español", "en": "English", "pt": "Português"}
+
+# One block per language the README is written in, with the markers it sits
+# between and the wording around each entry.
+BLOCKS = {
+    "es": {
+        "start": "<!-- ARTICLES:START -->",
+        "end": "<!-- ARTICLES:END -->",
+        "series": {
+            "dev-genius": "DEV Genius — cómo construí un sistema de agentes que entrega software",
+        },
+        "linkedin": "Leerlo en LinkedIn",
+        "untranslated": "en español",
+    },
+    "en": {
+        "start": "<!-- ARTICLES_EN:START -->",
+        "end": "<!-- ARTICLES_EN:END -->",
+        "series": {
+            "dev-genius": "DEV Genius — how I built an agent system that ships software",
+        },
+        "linkedin": "Read it on LinkedIn",
+        # The LinkedIn originals are all in Spanish; saying so before the
+        # click is cheaper than a reader finding out after it.
+        "linkedin_note": " (in Spanish)",
+        "untranslated": "in Spanish",
+    },
+}
 
 
 def parse_frontmatter(path: pathlib.Path) -> dict[str, str]:
@@ -65,77 +86,97 @@ def parse_frontmatter(path: pathlib.Path) -> dict[str, str]:
     return data
 
 
-def translations(article: pathlib.Path) -> str:
-    """Renders the links to the published translations sitting beside an article.
+def collect() -> dict[str, list[dict[str, object]]]:
+    """Every published article, with one metadata set per language it exists in."""
+    series: dict[str, list[dict[str, object]]] = {}
 
-    Absent, empty; that way an article without translations reads exactly as
-    it did before there were any.
-    """
-    links: list[str] = []
-    for sibling in sorted(article.parent.glob("articulo.*.md")):
-        lang = sibling.stem.split(".")[-1]
-        if lang == SOURCE_LANG:
+    for source in sorted(ROOT.glob(f"*/*/articulo.{SOURCE_LANG}.md")):
+        if source.parts[len(ROOT.parts)] in {"drafts", "scripts"}:
             continue
-        if parse_frontmatter(sibling).get("status") not in PUBLIC_STATUSES:
+
+        by_lang: dict[str, dict[str, str]] = {}
+        for sibling in sorted(source.parent.glob("articulo.*.md")):
+            lang = sibling.stem.split(".")[-1]
+            meta = parse_frontmatter(sibling)
+            if meta.get("status") not in PUBLIC_STATUSES:
+                continue
+            meta["path"] = str(sibling.relative_to(ROOT))
+            by_lang[lang] = meta
+
+        if SOURCE_LANG not in by_lang:
             continue
-        name = LANG_NAMES.get(lang, lang)
-        links.append(f"[{name}]({sibling.relative_to(ROOT)})")
 
-    return "".join(f" · {link}" for link in links)
-
-
-def collect() -> dict[str, list[dict[str, str]]]:
-    series: dict[str, list[dict[str, str]]] = {}
-    for article in sorted(ROOT.glob(f"*/*/articulo.{SOURCE_LANG}.md")):
-        if article.parts[len(ROOT.parts)] in {"drafts", "scripts"}:
-            continue
-        meta = parse_frontmatter(article)
-        meta["path"] = str(article.relative_to(ROOT))
-        meta["translations"] = translations(article)
-        series.setdefault(meta.get("series", "sin-serie"), []).append(meta)
+        source_meta = by_lang[SOURCE_LANG]
+        entry = {"by_lang": by_lang, "episode": int(source_meta.get("episode", "0"))}
+        series.setdefault(source_meta.get("series", "sin-serie"), []).append(entry)
 
     for items in series.values():
-        items.sort(key=lambda m: int(m.get("episode", "0")))
+        items.sort(key=lambda e: e["episode"])  # type: ignore[arg-type,return-value]
     return series
 
 
-def render(series: dict[str, list[dict[str, str]]]) -> str:
+def render(series: dict[str, list[dict[str, object]]], lang: str) -> str:
+    """The index as the README's `lang` section shows it."""
+    block = BLOCKS[lang]
     lines: list[str] = []
 
     for name, items in series.items():
-        public = [m for m in items if m.get("status") in PUBLIC_STATUSES]
-        if not public:
+        if not items:
             continue
 
-        lines.append(f"### {SERIES_TITLES.get(name, name)}\n")
-        for meta in public:
-            episode = meta.get("episode", "?")
+        lines.append(f"### {block['series'].get(name, name)}\n")  # type: ignore[union-attr]
+
+        for entry in items:
+            by_lang: dict[str, dict[str, str]] = entry["by_lang"]  # type: ignore[assignment]
+            # The reader's language when it exists; the original otherwise,
+            # said out loud rather than silently swapped.
+            meta = by_lang.get(lang, by_lang[SOURCE_LANG])
+            translated = lang in by_lang
+
             title = meta.get("title", "(sin título)")
-            lines.append(f"**{episode}. [{title}]({meta['path']})**  ")
+            suffix = "" if translated else f" — {block['untranslated']}"
+            lines.append(f"**{entry['episode']}. [{title}]({meta['path']})**{suffix}  ")
+
             if meta.get("summary"):
                 lines.append(f"{meta['summary']}  ")
-            if meta.get("linkedin_url"):
-                lines.append(
-                    f"[Leerlo en LinkedIn]({meta['linkedin_url']}) · {meta.get('date', '')}"
-                    f"{meta.get('translations', '')}"
+
+            # LinkedIn lives on the Spanish original, whatever language the
+            # entry is being rendered in.
+            source_meta = by_lang[SOURCE_LANG]
+            tail: list[str] = []
+            if source_meta.get("linkedin_url"):
+                note = block.get("linkedin_note", "")
+                tail.append(
+                    f"[{block['linkedin']}]({source_meta['linkedin_url']}){note}"
                 )
-            else:
-                lines.append(f"{meta.get('date', '')}{meta.get('translations', '')}")
+            if source_meta.get("date"):
+                tail.append(source_meta["date"])
+            # The languages other than the one this entry is already showing —
+            # which is the fallback, not `lang`, when there is no translation.
+            shown = lang if translated else SOURCE_LANG
+            tail += [
+                f"[{LANG_NAMES.get(other, other)}]({by_lang[other]['path']})"
+                for other in sorted(by_lang)
+                if other != shown
+            ]
+            lines.append(" · ".join(tail))
             lines.append("")
 
     return "\n".join(lines).rstrip() + "\n"
 
 
 def main() -> int:
-    body = render(collect())
-    current = README.read_text(encoding="utf-8")
+    series = collect()
+    updated = current = README.read_text(encoding="utf-8")
 
-    if START not in current or END not in current:
-        raise SystemExit(f"README.md: faltan los marcadores {START} / {END}")
+    for lang, block in BLOCKS.items():
+        start, end = block["start"], block["end"]
+        if start not in updated or end not in updated:
+            raise SystemExit(f"README.md: faltan los marcadores {start} / {end}")
 
-    head, rest = current.split(START, 1)
-    _, tail = rest.split(END, 1)
-    updated = f"{head}{START}\n\n{body}\n{END}{tail}"
+        head, rest = updated.split(start, 1)
+        _, tail = rest.split(end, 1)
+        updated = f"{head}{start}\n\n{render(series, lang)}\n{end}{tail}"
 
     if "--check" in sys.argv:
         if updated != current:

@@ -32,19 +32,19 @@ Si te dedicás a esto, probablemente estés en alguna parte del mismo camino.
 
 **1. [Mi primer intento con agentes de IA fracasó. El problema no era el modelo](dev-genius/01-el-primer-intento-fracaso/articulo.es.md)**  
 Un piloto con orquestadores de agentes que ayudaba y se depreciaba solo. Por qué el conocimiento congelado era el problema real, y qué hice después de abandonarlo.  
-[Leerlo en LinkedIn](https://www.linkedin.com/pulse/mi-primer-intento-con-agentes-de-ia-fracas%C3%B3-el-era-modelo-hernandez-ikpqf/) · 2026-08-09 · [English](dev-genius/01-el-primer-intento-fracaso/articulo.en.md)
+[Leerlo en LinkedIn](https://www.linkedin.com/pulse/mi-primer-intento-con-agentes-de-ia-fracas%C3%B3-el-era-modelo-hernandez-ikpqf/) · 2026-08-09 · [English](dev-genius/01-el-primer-intento-fracaso/articulo.en.md) · [Português](dev-genius/01-el-primer-intento-fracaso/articulo.pt.md)
 
 **2. [Por qué una feature debería vivir en un solo hilo](dev-genius/02-un-solo-hilo/articulo.es.md)**  
 La idea que sacó el experimento de mi laptop, y la decisión de arquitectura que la sostiene: orquestar el proceso y delegar el ciclo.  
-[Leerlo en LinkedIn](https://www.linkedin.com/pulse/por-qu%C3%A9-una-feature-deber%C3%ADa-vivir-en-un-solo-hilo-saul-hernandez-aq8cc/) · 2026-08-10
+[Leerlo en LinkedIn](https://www.linkedin.com/pulse/por-qu%C3%A9-una-feature-deber%C3%ADa-vivir-en-un-solo-hilo-saul-hernandez-aq8cc/) · 2026-08-10 · [English](dev-genius/02-un-solo-hilo/articulo.en.md) · [Português](dev-genius/02-un-solo-hilo/articulo.pt.md)
 
 **3. [Un agente que corre sin pedir permisos: cómo se hace eso seguro](dev-genius/03-correr-sin-permisos/articulo.es.md)**  
 Las cinco mitigaciones que convierten una idea imprudente en una decisión defendible. Ninguna es sobre el modelo.  
-[Leerlo en LinkedIn](https://www.linkedin.com/pulse/un-agente-que-corre-sin-pedir-permisos-c%C3%B3mo-se-hace-eso-hernandez-0fnqf/) · 2026-08-11
+[Leerlo en LinkedIn](https://www.linkedin.com/pulse/un-agente-que-corre-sin-pedir-permisos-c%C3%B3mo-se-hace-eso-hernandez-0fnqf/) · 2026-08-11 · [English](dev-genius/03-correr-sin-permisos/articulo.en.md) · [Português](dev-genius/03-correr-sin-permisos/articulo.pt.md)
 
 **4. [El cuello de botella se corrió dos veces](dev-genius/04-el-cuello-de-botella/articulo.es.md)**  
 Automatizar una etapa no acelera el sistema: mueve la restricción. Y por qué nadie del equipo tuvo que aprender una herramienta nueva.  
-[Leerlo en LinkedIn](https://www.linkedin.com/pulse/el-cuello-de-botella-se-corri%C3%B3-dos-veces-saul-hernandez-7wb0f/) · 2026-08-13
+[Leerlo en LinkedIn](https://www.linkedin.com/pulse/el-cuello-de-botella-se-corri%C3%B3-dos-veces-saul-hernandez-7wb0f/) · 2026-08-13 · [English](dev-genius/04-el-cuello-de-botella/articulo.en.md) · [Português](dev-genius/04-el-cuello-de-botella/articulo.pt.md)
 
 <!-- ARTICLES:END -->
 

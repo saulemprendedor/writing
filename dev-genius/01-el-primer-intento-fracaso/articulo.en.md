@@ -64,4 +64,4 @@ Getting it out of there was the next problem. And it turned out to be a design p
 
 *First article in a series of five on how I built an agent system that ships software to production.*
 
-*Continues in chapter 2: [Por qué una feature debería vivir en un solo hilo](https://saul.botsmith.ai/en/blog/un-solo-hilo) — in Spanish for now.*
+*Continues in chapter 2: [Why a feature should live in a single thread](https://saul.botsmith.ai/en/blog/un-solo-hilo).*

@@ -1,5 +1,5 @@
 ---
-title: "Por que uma feature deveria viver em uma única thread"
+title: "Por que uma feature deveria viver em um único thread"
 slug: un-solo-hilo
 series: dev-genius
 episode: 2
@@ -7,18 +7,18 @@ date: 2026-08-10
 status: published
 lang: pt
 summary: "A ideia que tirou o experimento do meu laptop, e a decisão de arquitetura que a sustenta: orquestrar o processo e delegar o ciclo."
-banner: banner.jpg
+banner: banner.pt.jpg
 ---
 
-# Por que uma feature deveria viver em uma única thread
+# Por que uma feature deveria viver em um único thread
 
 No [artigo anterior](https://saul.botsmith.ai/pt/blog/el-primer-intento-fracaso) contei como, depois de um piloto fracassado, encontrei uma forma de o conhecimento do sistema parar de envelhecer. Funcionava — e vivia no meu laptop.
 
 A segunda peça veio de uma apresentação da Salesforce sobre funcionalidades de IA dentro do Slack. Foi ali que a ideia estourou: **se o time inteiro já vive no Slack, por que as ferramentas do trabalho não estão lá?**
 
-E, sobretudo: por que uma feature atravessa cinco lugares diferentes — ideia, design, construção, certificação, merge — em vez de viver em **uma única thread**, onde qualquer um pode ler a história completa do começo ao fim.
+E, sobretudo: por que uma feature atravessa cinco lugares diferentes — ideia, design, construção, certificação, merge — em vez de viver em **um único thread**, onde qualquer um pode ler a história completa do começo ao fim.
 
-O desafio não era técnico, era de nível. As ferramentas que eu colocasse nessa thread tinham que ser **iguais ou melhores** do que as que cada área já usava. Se fossem piores, ninguém se mudava — e com razão.
+O desafio não era técnico, era de nível. As ferramentas que eu colocasse nesse thread tinham que ser **iguais ou melhores** do que as que cada área já usava. Se fossem piores, ninguém se mudava — e com razão.
 
 Então levei o experimento para o Slack, e a implementação que rodava na minha máquina passou para sandboxes efêmeros na nuvem. Aí apareceu algo que eu não tinha ido buscar: dava para trabalhar em várias features **ao mesmo tempo**.
 
@@ -28,7 +28,7 @@ A tentação quando você constrói algo assim é fazer um agente autônomo. Voc
 
 Fiz o contrário. **O sistema é um orquestrador explícito.** O fluxo — assumir a tarefa, investigar o código, levantar as dúvidas, escrever a especificação, implementar, rodar os checks, abrir o PR — está codificado passo a passo. O modelo é chamado só para as tarefas atômicas em que ele realmente agrega: analisar, redigir, decidir. Ele não decide o que vem depois. Isso eu já sei.
 
-Por quê? Porque um agente autônomo é impossível de depurar. Quando algo dá errado no passo 7 de 12, você quer poder olhar o passo 7. Com um fluxo explícito há rastro: cada fase deixa sua marca na thread daquela tarefa. Qualquer um abre e vê o que ele investigou, o que perguntou e o que fez.
+Por quê? Porque um agente autônomo é impossível de depurar. Quando algo dá errado no passo 7 de 12, você quer poder olhar o passo 7. Com um fluxo explícito há rastro: cada fase deixa sua marca no thread daquela tarefa. Qualquer um abre e vê o que ele investigou, o que perguntou e o que fez.
 
 A autonomia é sedutora na demo e cara em produção.
 

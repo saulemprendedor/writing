@@ -1,5 +1,5 @@
 ---
-title: "O gargalo mudou de lugar duas vezes"
+title: "O gargalo se moveu duas vezes"
 slug: el-cuello-de-botella
 series: dev-genius
 episode: 4
@@ -7,10 +7,10 @@ date: 2026-08-13
 status: published
 lang: pt
 summary: "Automatizar uma etapa não acelera o sistema: move a restrição. E por que ninguém do time teve que aprender uma ferramenta nova."
-banner: banner.jpg
+banner: banner.pt.jpg
 ---
 
-# O gargalo mudou de lugar duas vezes
+# O gargalo se moveu duas vezes
 
 Comecei por onde doía: a **implementação**. É a etapa visível, a que todo mundo quer automatizar primeiro. E funcionou.
 
@@ -42,7 +42,7 @@ Cada fase da linha tem sua própria dinâmica e sua própria ferramenta. A defin
 
 A tentação é construir uma interface própria: um painel onde tudo é controlado, caprichado, com o fluxo inteiro à vista. É aí que a maioria desses projetos morre — não por capacidade técnica, mas porque obrigam o time a se mudar. Uma ferramenta que exige mudança compete contra o trabalho real, e o trabalho real ganha sempre.
 
-Fiz o contrário: o agente entra em cada fase pela porta que já estava aberta. O ticket é escrito no tracker que o time já usava, no formato dele. As dúvidas chegam na thread onde aquela conversa já acontecia. O Pull Request aparece no GitHub como qualquer outro e é revisado como qualquer outro. O ambiente de QA é uma URL que se abre no navegador.
+Fiz o contrário: o agente entra em cada fase pela porta que já estava aberta. O ticket é escrito no tracker que o time já usava, no formato dele. As dúvidas chegam no thread onde aquela conversa já acontecia. O Pull Request aparece no GitHub como qualquer outro e é revisado como qualquer outro. O ambiente de QA é uma URL que se abre no navegador.
 
 Ninguém trocou de ferramenta. O que mudou é quanta operação manual cada um faz dentro dela.
 

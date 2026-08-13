@@ -7,7 +7,7 @@ date: 2026-08-11
 status: published
 lang: pt
 summary: "As cinco mitigações que transformam uma ideia imprudente em uma decisão defensável. Nenhuma delas é sobre o modelo."
-banner: banner.jpg
+banner: banner.pt.jpg
 ---
 
 # Um agente que roda sem pedir permissões: como fazer isso com segurança
@@ -46,4 +46,4 @@ Com isso resolvido, a linha começou a produzir de verdade. E então apareceu um
 
 *Terceiro artigo de uma série de cinco.*
 
-*Continua no capítulo 4: [O gargalo mudou de lugar duas vezes](https://saul.botsmith.ai/pt/blog/el-cuello-de-botella).*
+*Continua no capítulo 4: [O gargalo se moveu duas vezes](https://saul.botsmith.ai/pt/blog/el-cuello-de-botella).*

@@ -7,7 +7,7 @@ date: 2026-08-09
 status: published
 lang: pt
 summary: "Um piloto com orquestradores de agentes que ajudava e se depreciava sozinho. Por que o conhecimento congelado era o problema real, e o que fiz depois de abandoná-lo."
-banner: banner.jpg
+banner: banner.pt.jpg
 ---
 
 # Minha primeira tentativa com agentes de IA fracassou. O problema não era o modelo
@@ -64,4 +64,4 @@ Tirar aquilo dali foi o problema seguinte. E acabou sendo um problema de design,
 
 *Primeiro artigo de uma série de cinco sobre como construí um sistema de agentes que entrega software em produção.*
 
-*Continua no capítulo 2: [Por que uma feature deveria viver em uma única thread](https://saul.botsmith.ai/pt/blog/un-solo-hilo).*
+*Continua no capítulo 2: [Por que uma feature deveria viver em um único thread](https://saul.botsmith.ai/pt/blog/un-solo-hilo).*

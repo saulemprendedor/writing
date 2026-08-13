@@ -2,8 +2,12 @@
 """Regenerate the article index in README.md from the articles themselves.
 
 The index is never edited by hand. It is rebuilt from the YAML frontmatter of
-every `articulo.md` under a series directory, and written between the
+every `articulo.es.md` under a series directory, and written between the
 ARTICLES:START / ARTICLES:END markers in README.md.
+
+Spanish is the source language, so it is what the index lists. A translation
+(`articulo.<lang>.md` beside it) is linked from its entry once it is
+published — one line per article, not one per language.
 
 Why: an index maintained by hand is wrong by the sixth article. Here the
 articles are the source of truth and the README is a derived artifact — so it
@@ -32,6 +36,14 @@ SERIES_TITLES = {
 # not something a visitor should stumble into.
 PUBLIC_STATUSES = {"published"}
 
+# The source language: the file the index is built from, and the one every
+# article has. Anything else beside it is a translation.
+SOURCE_LANG = "es"
+
+# Display names for the translation links, so the label reads in the language
+# it leads to rather than in Spanish.
+LANG_NAMES = {"en": "English", "pt": "Português"}
+
 
 def parse_frontmatter(path: pathlib.Path) -> dict[str, str]:
     """Minimal YAML frontmatter reader — flat `key: value` pairs only.
@@ -53,13 +65,33 @@ def parse_frontmatter(path: pathlib.Path) -> dict[str, str]:
     return data
 
 
+def translations(article: pathlib.Path) -> str:
+    """Renders the links to the published translations sitting beside an article.
+
+    Absent, empty; that way an article without translations reads exactly as
+    it did before there were any.
+    """
+    links: list[str] = []
+    for sibling in sorted(article.parent.glob("articulo.*.md")):
+        lang = sibling.stem.split(".")[-1]
+        if lang == SOURCE_LANG:
+            continue
+        if parse_frontmatter(sibling).get("status") not in PUBLIC_STATUSES:
+            continue
+        name = LANG_NAMES.get(lang, lang)
+        links.append(f"[{name}]({sibling.relative_to(ROOT)})")
+
+    return "".join(f" · {link}" for link in links)
+
+
 def collect() -> dict[str, list[dict[str, str]]]:
     series: dict[str, list[dict[str, str]]] = {}
-    for article in sorted(ROOT.glob("*/*/articulo.md")):
+    for article in sorted(ROOT.glob(f"*/*/articulo.{SOURCE_LANG}.md")):
         if article.parts[len(ROOT.parts)] in {"drafts", "scripts"}:
             continue
         meta = parse_frontmatter(article)
         meta["path"] = str(article.relative_to(ROOT))
+        meta["translations"] = translations(article)
         series.setdefault(meta.get("series", "sin-serie"), []).append(meta)
 
     for items in series.values():
@@ -83,9 +115,12 @@ def render(series: dict[str, list[dict[str, str]]]) -> str:
             if meta.get("summary"):
                 lines.append(f"{meta['summary']}  ")
             if meta.get("linkedin_url"):
-                lines.append(f"[Leerlo en LinkedIn]({meta['linkedin_url']}) · {meta.get('date', '')}")
+                lines.append(
+                    f"[Leerlo en LinkedIn]({meta['linkedin_url']}) · {meta.get('date', '')}"
+                    f"{meta.get('translations', '')}"
+                )
             else:
-                lines.append(f"{meta.get('date', '')}")
+                lines.append(f"{meta.get('date', '')}{meta.get('translations', '')}")
             lines.append("")
 
     return "\n".join(lines).rstrip() + "\n"

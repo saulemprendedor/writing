@@ -42,6 +42,10 @@ La idea que sacó el experimento de mi laptop, y la decisión de arquitectura qu
 Las cinco mitigaciones que convierten una idea imprudente en una decisión defendible. Ninguna es sobre el modelo.  
 [Leerlo en LinkedIn](https://www.linkedin.com/pulse/un-agente-que-corre-sin-pedir-permisos-c%C3%B3mo-se-hace-eso-hernandez-0fnqf/) · 2026-08-11
 
+**4. [El cuello de botella se corrió dos veces](dev-genius/04-el-cuello-de-botella/articulo.md)**  
+Automatizar una etapa no acelera el sistema: mueve la restricción. Y por qué nadie del equipo tuvo que aprender una herramienta nueva.  
+[Leerlo en LinkedIn](https://www.linkedin.com/pulse/el-cuello-de-botella-se-corri%C3%B3-dos-veces-saul-hernandez-7wb0f/) · 2026-08-13
+
 <!-- ARTICLES:END -->
 
 ## Cómo está organizado

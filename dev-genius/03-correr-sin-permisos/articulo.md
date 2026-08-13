@@ -46,3 +46,5 @@ Con esto resuelto, la línea empezó a producir en serio. Y entonces apareció u
 ---
 
 *Tercer artículo de una serie de cinco.*
+
+*Sigue en el capítulo 4: [El cuello de botella se corrió dos veces](https://saul.botsmith.ai/es/blog/el-cuello-de-botella).*

@@ -56,4 +56,6 @@ The numbers go in the last article, along with the finding I didn't expect.
 
 *Fourth article in a series of five.*
 
+*Continues in chapter 5: [The numbers, and the finding I didn't expect](https://saul.botsmith.ai/en/blog/los-numeros).*
+
 *Comes from chapter 3: [An agent that runs without asking for permissions: how to make it secure](https://saul.botsmith.ai/en/blog/correr-sin-permisos).*

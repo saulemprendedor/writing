@@ -57,4 +57,6 @@ En el último artículo van los números, y el hallazgo que no esperaba.
 
 *Cuarto artículo de una serie de cinco.*
 
+*Sigue en el capítulo 5: [Los números, y el hallazgo que no esperaba](https://saul.botsmith.ai/es/blog/los-numeros).*
+
 *Viene del capítulo 3: [Un agente que corre sin pedir permisos: cómo se hace eso seguro](https://saul.botsmith.ai/es/blog/correr-sin-permisos).*

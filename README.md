@@ -51,6 +51,10 @@ The five mitigations that turn a reckless idea into a defensible decision. None 
 Automating one stage doesn't speed up the system: it moves the constraint. And why nobody on the team had to learn a new tool.  
 [Read it on LinkedIn](https://www.linkedin.com/pulse/el-cuello-de-botella-se-corri%C3%B3-dos-veces-saul-hernandez-7wb0f/) (in Spanish) · 2026-08-13 · [Español](dev-genius/04-el-cuello-de-botella/articulo.es.md) · [Português](dev-genius/04-el-cuello-de-botella/articulo.pt.md)
 
+**5. [The numbers, and the finding I didn't expect](dev-genius/05-los-numeros/articulo.en.md)**  
+Two measured sprints, and the figure that surprised me: the gain was even across profiles with different seniority.  
+[Read it on LinkedIn](https://www.linkedin.com/pulse/los-n%C3%BAmeros-y-el-hallazgo-que-esperaba-saul-hernandez-sktef/) (in Spanish) · 2026-08-14 · [Español](dev-genius/05-los-numeros/articulo.es.md) · [Português](dev-genius/05-los-numeros/articulo.pt.md)
+
 <!-- ARTICLES_EN:END -->
 
 ## How it's organized
@@ -128,6 +132,10 @@ Las cinco mitigaciones que convierten una idea imprudente en una decisión defen
 **4. [El cuello de botella se corrió dos veces](dev-genius/04-el-cuello-de-botella/articulo.es.md)**  
 Automatizar una etapa no acelera el sistema: mueve la restricción. Y por qué nadie del equipo tuvo que aprender una herramienta nueva.  
 [Leerlo en LinkedIn](https://www.linkedin.com/pulse/el-cuello-de-botella-se-corri%C3%B3-dos-veces-saul-hernandez-7wb0f/) · 2026-08-13 · [English](dev-genius/04-el-cuello-de-botella/articulo.en.md) · [Português](dev-genius/04-el-cuello-de-botella/articulo.pt.md)
+
+**5. [Los números, y el hallazgo que no esperaba](dev-genius/05-los-numeros/articulo.es.md)**  
+Dos sprints medidos, y el dato que me sorprendió: el aumento fue parejo entre perfiles de distinto seniority.  
+[Leerlo en LinkedIn](https://www.linkedin.com/pulse/los-n%C3%BAmeros-y-el-hallazgo-que-esperaba-saul-hernandez-sktef/) · 2026-08-14 · [English](dev-genius/05-los-numeros/articulo.en.md) · [Português](dev-genius/05-los-numeros/articulo.pt.md)
 
 <!-- ARTICLES:END -->
 
